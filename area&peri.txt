@@ -1,0 +1,112 @@
+#include <iostream>
+#include <cstring>
+#include <string>
+using namespace std;
+
+class da
+{
+    char d[10];
+    public:
+    int a,b;
+    void get();
+    void put();
+};
+class cir
+{
+    float r;
+    public:
+    float area;
+    float circum;
+    void get();
+    void put();
+};
+class req
+{
+    float l,w;
+    public:
+    float area;
+    float peri;
+    void get();
+    void put();
+};
+class sq
+{
+    float s;
+    public:
+    float area;
+    float peri;
+    void get();
+    void put();
+};
+int main()
+{
+    da a;
+    cir x;
+    req y;
+    sq z;
+    
+    a.get();
+    a.put();
+    x.get();
+    x.put();
+    y.get();
+    y.put();
+    z.get();
+    z.put();
+}
+
+void da::get()
+{
+    cout<<"Which shape do you want (circle, rectangle or square: ";
+    cin>>d;
+    
+    if(strcmp(d)!="circle"||"rectangle"||"square")
+    {
+        cout<<"invalid !";
+    }
+}
+void cir::get()
+{
+    cout<<"\n------Circle-------\n";
+    cout<<"Enter radius of circle: ";
+    cin>>r;
+
+    area=3.142*r*r;
+    circum=2*3.142*r;     
+}
+
+void req::get()
+{
+    cout<<"\n\n-----Rectangle------\n";
+    cout<<"Enter length: ";
+    cin>>l;
+    cout<<"Enter width: ";
+    cin>>w;
+    
+    area=l*w;
+    peri=2*(l+w);
+}
+void sq::get()
+{
+    cout<<"\n\n------Square------\n";
+    cout<<"Enter side ";
+    cin>>s;
+    
+    area=s*s;
+    peri=4*s;
+}
+void cir::put()
+{
+     cout<<"\nArea= "<<area; 
+     cout<<"\nCircumference= "<<circum; 
+}
+void req::put()
+{
+      cout<<"\nArea= "<<area; 
+      cout<<"\nPerimeter= "<<peri;  
+}
+void sq::put()
+{
+      cout<<"\nArea= "<<area; 
+      cout<<"\nPerimeter= "<<peri;  
+}
